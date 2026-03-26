@@ -1,9 +1,5 @@
 import { TabContext, TabPanel } from '@mui/lab';
 import { Box, Button, Chip, Divider, Grid, Stack, Typography } from '@mui/material';
-import LinearProgress, {
-  linearProgressClasses
-} from "@mui/material/LinearProgress";
-import { styled } from "@mui/material/styles";
 import { useState } from 'react';
 // import css from '../images/css.svg';
 // import html from '../images/html.svg';
@@ -13,19 +9,6 @@ import { useState } from 'react';
 // import Marquee from 'react-fast-marquee';
 
 const SkillsPage = () => {
-
-  const BorderLinearProgress = styled(LinearProgress)(({ theme, backgroundcolor }) => ({
-    height: 10,
-    borderRadius: 5,
-    [`&.${linearProgressClasses.colorPrimary}`]: {
-      backgroundColor:
-        theme.palette.grey[theme.palette.mode === "light" ? 300 : 800]
-    },
-    [`& .${linearProgressClasses.bar}`]: {
-      borderRadius: 5,
-      backgroundColor: backgroundcolor,
-    }
-  }));
 
   //Tabs
   const [value, setValue] = useState('1');
@@ -51,7 +34,7 @@ const SkillsPage = () => {
   };
 
   const ExperienceDuration = ({ startDate }) => {
-    const { years, months } = calculateDuration(startDate);
+    const { months } = calculateDuration(startDate);
 
     return (
       <Typography variant='body1' sx={{ color: '#5E5757' }}>
@@ -61,7 +44,7 @@ const SkillsPage = () => {
   };
 
   const ExperienceDurationGravitus = ({ startDate }) => {
-    const { years, months } = calculateDuration(startDate);
+    const { years } = calculateDuration(startDate);
 
     return (
       <Typography variant='body1' sx={{ color: '#5E5757' }}>
@@ -105,7 +88,6 @@ const SkillsPage = () => {
           border: `1px solid ${colors.border}`,
           borderRadius: "999px",
           fontWeight: 500,
-          fontSize: 12,
         }}
       />
     );

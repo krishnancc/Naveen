@@ -1,36 +1,8 @@
-import { Alert, Button, FormHelperText, Grid, OutlinedInput, Snackbar, Stack, TextareaAutosize, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Alert, Button, FormHelperText, Grid, OutlinedInput, Snackbar, Stack, Typography } from '@mui/material';
 import emailjs from 'emailjs-com';
 import { Formik } from 'formik';
 import { useEffect, useRef, useState } from 'react';
 import * as Yup from 'yup';
-const StyledTextarea = styled(TextareaAutosize)(({ theme, error }) => ({
-  width: 'auto',
-  color: '#000',
-  fontFamily: 'Montserrat,sans-serif',
-  fontSize: '16px',
-  letterSpacing: '0.5px',
-  fontWeight: 400,
-  height: '63px',
-  padding: 12,
-  borderRadius: '10px 10px 0 10px',
-  borderColor: `${error ? 'red' : '#d9d2d2'}`,
-  '&:focus': {
-    borderColor: error ? 'red' : 'blue',
-  },
-  '&:focus-visible': {
-    outline: 0,
-  },
-  '&:hover': {
-    borderColor: error ? 'red' : '#d9d2d2',
-  },
-  '::placeholder': {
-    fontSize: '16px',
-    color: '#A0A0A0',
-    fontWeight: 400,
-    fontFamily: 'Montserrat,sans-serif',
-  },
-}));
 
 const ContactForm = () => {
   const form = useRef();

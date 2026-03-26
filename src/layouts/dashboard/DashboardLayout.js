@@ -8,8 +8,6 @@ import Header from './header';
 
 // ----------------------------------------------------------------------
 
-const APP_BAR_MOBILE = 64;
-const APP_BAR_DESKTOP = 92;
 
 const StyledRoot = styled('div')({
   display: 'flex',
@@ -34,7 +32,7 @@ const Main = styled('div')(({ theme }) => ({
 
 export default function DashboardLayout() {
   const [open, setOpen] = useState(false);
-
+  console.log('DashboardLayout rendered', open);
   return (
     <StyledRoot>
       <Header onOpenNav={() => setOpen(true)} />
